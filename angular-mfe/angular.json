@@ -5,6 +5,14 @@
   "projects": {
     "angular-lib": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "skipTests": true,
+          "inlineStyle": true,
+          "inlineTemplate": true,
+          "type": "component"
+        }
+      },
       "root": "projects/angular-lib",
       "sourceRoot": "projects/angular-lib/src",
       "prefix": "lib",
