@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SearchComponent } from '../../../../angular-lib/src/lib/search/search.component';
 @Component({
   imports: [SearchComponent],
   template: `
     <lib-search [(searchTerm)]="stocksSearch" />
     <div>Searching stocks for : {{ stocksSearch }}</div>
+    <pre>From router query params: {{ st() }}</pre>
   `,
 })
 export default class StocksPage {
+  public st = input<string>();
   protected stocksSearch = 'algo';
 }

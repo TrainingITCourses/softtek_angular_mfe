@@ -1,4 +1,12 @@
-import { Component, effect, ElementRef, model, viewChild } from '@angular/core';
+import {
+  Component,
+  effect,
+  ElementRef,
+  inject,
+  model,
+  viewChild,
+} from '@angular/core';
+import { Router } from '@angular/router';
 import {
   debounceTime,
   distinctUntilChanged,
@@ -13,6 +21,7 @@ import {
   template: ` <input type="search" [value]="searchTerm()" #searchInput /> `,
 })
 export class SearchComponent {
+  private router = inject(Router);
   protected searchInputElRef = viewChild<ElementRef>('searchInput');
 
   public searchTerm = model<string>('');
@@ -31,5 +40,10 @@ export class SearchComponent {
         tap((value) => this.searchTerm.set(value))
       )
       .subscribe();
+  });
+
+  private onSearchTerm = effect(() => {
+    const searchTerm = this.searchTerm();
+    this.router.navigate([], { queryParams: { st: searchTerm } });
   });
 }
