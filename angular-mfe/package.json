@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --project=angular-app --port=4201",
-    "build": "ng build",
+    "build:app": "ng build --project=angular-app",
+    "build:lib": "ng build --project=angular-lib",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

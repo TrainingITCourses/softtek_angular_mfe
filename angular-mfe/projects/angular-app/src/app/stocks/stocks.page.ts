@@ -1,5 +1,13 @@
 import { Component, input } from '@angular/core';
-import { SearchComponent } from '../../../../angular-lib/src/lib/search/search.component';
+// Source path
+// import { SearchComponent } from '../../../../angular-lib/src/lib/search/search.component';
+
+// Dist path
+import { SearchComponent } from '../../../../../dist/angular-lib';
+
+// Node Modules
+// import { SearchComponent } from '@softtek/angular-lib';
+
 @Component({
   imports: [SearchComponent],
   template: `
