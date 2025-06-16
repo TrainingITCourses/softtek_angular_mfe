@@ -3,13 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'lib-angular-lib',
   imports: [],
-  template: `
-    <p>
-      angular-lib works!
-    </p>
-  `,
-  styles: ``
+  template: ` <h2>angular-lib works!</h2> `,
+  styles: ``,
 })
-export class AngularLib {
-
-}
+export class AngularLib {}

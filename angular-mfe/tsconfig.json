@@ -34,6 +34,9 @@
     },
     {
       "path": "./projects/angular-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/angular-app/tsconfig.app.json"
     }
   ]
 }
