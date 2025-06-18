@@ -21,12 +21,12 @@ import {
   template: ` <input type="search" [value]="searchTerm()" #searchInput /> `,
 })
 export class SearchComponent {
-  private router = inject(Router);
+  #router = inject(Router);
   protected searchInputElRef = viewChild<ElementRef>('searchInput');
 
   public searchTerm = model<string>('');
 
-  private onSearchInputElRef = effect(() => {
+  #onSearchInputElRef = effect(() => {
     const searchInputNg = this.searchInputElRef();
     if (!searchInputNg) return;
     const searchInputNative = searchInputNg.nativeElement;
@@ -44,6 +44,6 @@ export class SearchComponent {
 
   private onSearchTerm = effect(() => {
     const searchTerm = this.searchTerm();
-    this.router.navigate([], { queryParams: { st: searchTerm } });
+    this.#router.navigate([], { queryParams: { st: searchTerm } });
   });
 }
