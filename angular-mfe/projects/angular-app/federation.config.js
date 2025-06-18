@@ -5,7 +5,7 @@ module.exports = withNativeFederation({
   name: 'angular-app',
 
   exposes: {
-    './Component': './projects\angular-app\src\app\app.ts',
+    './StocksPage': './projects/angular-app/src/app/stocks/stocks.page.ts',
   },
 
   shared: {
